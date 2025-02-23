@@ -1,0 +1,268 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 min-h-screen flex items-center justify-center">
+    <div class="fixed right-4 bottom-4 flex flex-col space-y-2">
+
+        <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg">
+            <i class="fas fa-download text-gray-700"></i>
+            <button id="pdfDownload"
+                class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
+                <div
+                    class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-file-pdf text-gray-700 text-xs"></i>
+                </div>
+            </button>
+        </div>
+
+        <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg">
+            <span class="text-gray-700 font-semibold">EN</span>
+            <button id="languageToggle"
+                class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
+                <div id="toggleCircle"
+                    class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md transition duration-300"></div>
+            </button>
+            <span class="text-gray-700 font-semibold">VI</span>
+
+        </div>
+    </div>
+    <div class="max-w-5xl mx-auto p-4">
+        <div class="bg-white shadow-md rounded-lg p-4 flex">
+            <div class="w-1/3 p-4">
+                <div class="text-center">
+                    <img alt="Profile image" class="mx-auto mb-4" height="100" src="1.jpg" width="100" />
+                </div>
+                <div class="text-center mt-4">
+                    <h2 class="text-blue-700 text-xl font-bold" data-i18n="name"></h2>
+                </div>
+                <div class="mt-4">
+                    <div class="bg-gradient-to-r from-blue-700 to-black  text-white font-bold py-2 px-4 rounded-lg w-full text-center"
+                        data-i18n="contact_info">
+                    </div>
+                </div>
+                <div class="mt-4 text-gray-700">
+                    <p class="flex items-center">
+                        <i class="fas fa-birthday-cake mr-2"></i> <span data-i18n="birthday"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fas fa-mars mr-2"></i> <span data-i18n="gender"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fas fa-phone mr-2"></i> <span data-i18n="phone"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fas fa-envelope mr-2"></i> <span data-i18n="email"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fas fa-map-marker-alt mr-2"></i> <span data-i18n="address"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fab fa-facebook mr-2"></i> <span data-i18n="facebook"></span>
+                    </p>
+                    <p class="flex items-center mt-2">
+                        <i class="fab fa-github mr-2"></i> <span data-i18n="github"></span>
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <div class="bg-gradient-to-r from-blue-700 to-black  text-white font-bold py-2 px-4 rounded-lg w-full text-center"
+                        data-i18n="project">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-2/3 p-4">
+                <div class="bg-gradient-to-r from-blue-700 to-black  text-white p-2 rounded-t-lg">
+                    <h3 class="text-lg font-bold" data-i18n="introduction"></h3>
+                </div>
+                <div class="border-l-4 p-4 bg-white shadow-md">
+                    <p class="text-blue-600 font-bold" data-i18n="intern"></p>
+                    <p data-i18n="looking_for"></p>
+
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-700 to-black text-white p-2 rounded-t-lg mt-4">
+                    <h3 class="text-lg font-bold" data-i18n="education"></h3>
+                </div>
+                <div class="border-l-4 p-4 bg-white shadow-md">
+                    <p class="text-blue-600 font-bold" data-i18n="certifications"></p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-700 to-black text-white p-2 rounded-t-lg mt-4">
+                    <h3 class="text-lg font-bold" data-i18n="skills"></h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4 p-4 bg-white shadow-md border-l-4">
+                    <div>
+                        <h4 class="text-blue-600 font-bold mb-2" data-i18n="soft_skills"></h4>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-comments mr-2"></i> <span data-i18n="communication"></span>
+                        </p>
+                        <div class="bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-users mr-2"></i> <span data-i18n="teamwork"></span>
+                        </p>
+                        <div class="bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-book mr-2"></i> <span data-i18n="self_learning"></span>
+                        </p>
+                        <div class="bg-gray-200 rounded-full h-2 mb-4">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-language mr-2"></i> <span data-i18n="english"></span>
+                        </p>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 35%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-blue-600 font-bold mb-2" data-i18n="programming_skills"></h4>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-html5 mr-2 text-orange-500"></i> HTML
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-css3-alt mr-2 text-blue-500 "></i> CSS
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-js-square mr-2 text-yellow-500"></i> JavaScript
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-laravel mr-2 text-red-500"></i> Laravel
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-java mr-2 text-orange-600"></i> Java
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fab fa-python mr-2 text-blue-500"></i> Python
+                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-700 to-black  text-white p-2 rounded-t-lg mt-4">
+                    <h3 class="text-lg font-bold" data-i18n="advantages"></h3>
+                </div>
+                <div class="border-l-4 p-4 bg-white shadow-md">
+                    <ul class="list-disc list-inside">
+                        <li data-i18n="good_looking"></li>
+                        <li data-i18n="enthusiastic">Tháo vát, nhiệt tình</li>
+                        <li data-i18n="adaptable">Dễ thích nghi, tiếp thu nhanh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        const languageToggle = document.getElementById("languageToggle");
+        const toggleCircle = document.getElementById("toggleCircle");
+        const pdfDownload = document.getElementById("pdfDownload");
+        const pdfCircle = pdfDownload.querySelector("div");
+        let currentLang = "en";
+        let isPdfView = false;
+
+        function changeLanguage(lang) {
+            fetch("locales.json")
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelectorAll("[data-i18n]").forEach(el => {
+                        const key = el.getAttribute("data-i18n");
+                        if (data[lang] && data[lang][key]) {
+                            el.textContent = data[lang][key];
+                        }
+                    });
+                })
+                .catch(error => console.error("Error loading translation file:", error));
+        }
+
+        languageToggle.addEventListener("click", () => {
+            currentLang = currentLang === "en" ? "vi" : "en";
+
+            anime({
+                targets: toggleCircle,
+                translateX: currentLang === "vi" ? 28 : 0,
+                easing: "easeInOutQuad",
+                duration: 300
+            });
+
+            languageToggle.classList.toggle("bg-gray-300", currentLang === "en");
+            languageToggle.classList.toggle("bg-blue-500", currentLang === "vi");
+
+            changeLanguage(currentLang);
+        });
+
+        pdfDownload.addEventListener("click", () => {
+            isPdfView = !isPdfView;
+
+            // Animate the circle
+            anime({
+                targets: pdfCircle,
+                translateX: isPdfView ? 28 : 0,
+                easing: "easeInOutQuad",
+                duration: 300
+            });
+
+            // Toggle background color
+            pdfDownload.classList.toggle("bg-gray-300", !isPdfView);
+            pdfDownload.classList.toggle("bg-blue-500", isPdfView);
+
+            // Download the PDF
+            const link = document.createElement('a');
+            link.href = 'CV_Nguyen_Quoc_Huy.pdf';
+            link.download = 'CV_Nguyen_Quoc_Huy.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Reset toggle after download
+            setTimeout(() => {
+                isPdfView = false;
+                anime({
+                    targets: pdfCircle,
+                    translateX: 0,
+                    easing: "easeInOutQuad",
+                    duration: 300
+                });
+                pdfDownload.classList.add("bg-gray-300");
+                pdfDownload.classList.remove("bg-blue-500");
+            }, 1000);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            changeLanguage(currentLang);
+        });
+    </script>
+</body>
+
+</html>
