@@ -1,282 +1,315 @@
-<html>
-<!-- HTML Meta Tags -->
-<title>CV-Nguyễn Quốc Huy</title>
-<meta name="description" content="Self-learning, contribution, responsibility">
-
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://cv-dev-nqh.vercel.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CV-Nguyễn Quốc Huy">
-<meta property="og:description" content="Self-learning, contribution, responsibility">
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/81db3ec9-cf29-48ff-96d3-3f444e41e312.png?token=3n7zvlTm0ewlQ6Pm_1C3H0hHuUZhkO_5f0JtUwQP78M&height=586&width=1200&expires=33276312792">
-
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="cv-dev-nqh.vercel.app">
-<meta property="twitter:url" content="https://cv-dev-nqh.vercel.app/">
-<meta name="twitter:title" content="CV-Nguyễn Quốc Huy">
-<meta name="twitter:description" content="Self-learning, contribution, responsibility">
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/81db3ec9-cf29-48ff-96d3-3f444e41e312.png?token=3n7zvlTm0ewlQ6Pm_1C3H0hHuUZhkO_5f0JtUwQP78M&height=586&width=1200&expires=33276312792">
-
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
- 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>CV-Nguyễn Quốc Huy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Self-learning, contribution, responsibility">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
-        body {
-            font-family: "Open Sans", sans-serif;
-        }
+        body { font-family: "Open Sans", sans-serif; }
     </style>
 </head>
 
-<body class="bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 min-h-screen flex items-center justify-center">
-    <div class="fixed right-4 bottom-4 flex flex-col space-y-2">
-
+<body class="bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 min-h-screen flex items-center justify-center py-8">
+    <div class="fixed right-4 bottom-4 flex flex-col space-y-2 z-50">
         <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg">
             <i class="fas fa-download text-gray-700"></i>
-            <button id="pdfDownload"
-                class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
-                <div
-                    class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md transition duration-300 flex items-center justify-center">
+            <button id="pdfDownload" class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300" title="Tải CV & Chứng chỉ">
+                <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center">
                     <i class="fas fa-file-pdf text-gray-700 text-xs"></i>
                 </div>
             </button>
         </div>
 
         <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg">
-            <span class="text-gray-700 font-semibold">EN</span>
-            <button id="languageToggle"
-                class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
-                <div id="toggleCircle"
-                    class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md transition duration-300"></div>
+            <span class="text-gray-700 font-semibold text-sm">EN</span>
+            <button id="languageToggle" class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
+                <div id="toggleCircle" class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md"></div>
             </button>
-            <span class="text-gray-700 font-semibold">VI</span>
-
+            <span class="text-gray-700 font-semibold text-sm">VI</span>
         </div>
     </div>
-    <div class="max-w-5xl mx-auto p-4">
-        <div class="bg-white shadow-md rounded-lg p-4 flex">
-            <div class="w-1/3 p-4">
+
+    <div class="max-w-5xl mx-auto p-4 w-full">
+        <div class="bg-white shadow-xl rounded-lg p-6 flex flex-col md:flex-row gap-6">
+            <div class="w-full md:w-1/3">
                 <div class="text-center">
-                    <img alt="Profile image" class="mx-auto mb-4" height="100" src="1.jpg" width="100" />
+                    <img alt="Profile image" class="mx-auto mb-4 rounded-full border-4 border-blue-100 object-cover" height="150" src="1.jpg" width="150" />
                 </div>
                 <div class="text-center mt-4">
-                    <h2 class="text-blue-700 text-xl font-bold" data-i18n="name"></h2>
+                    <h2 class="text-blue-700 text-2xl font-bold uppercase tracking-wide" data-i18n="name"></h2>
                 </div>
-                <div class="mt-4">
-                    <div class="bg-gradient-to-r from-blue-700 to-black  text-white font-bold py-2 px-4 rounded-lg w-full text-center"
-                        data-i18n="contact_info">
-                    </div>
+                <div class="mt-4 text-center">
+                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white font-bold py-2 px-4 rounded-lg w-full text-sm shadow-md uppercase" data-i18n="intern"></div>
                 </div>
-                <div class="mt-4 text-gray-700">
-                    <p class="flex items-center">
-                        <i class="fas fa-birthday-cake mr-2"></i> <span data-i18n="birthday"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fas fa-mars mr-2"></i> <span data-i18n="gender"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fas fa-phone mr-2"></i> <span data-i18n="phone"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fas fa-envelope mr-2"></i> <span data-i18n="email"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fas fa-map-marker-alt mr-2"></i> <span data-i18n="address"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fab fa-facebook mr-2"></i> <span data-i18n="facebook"></span>
-                    </p>
-                    <p class="flex items-center mt-2">
-                        <i class="fab fa-github mr-2"></i> <span data-i18n="github"></span>
-                    </p>
+                <div class="mt-6 text-gray-700 text-sm space-y-3">
+                    <p class="flex items-center"><i class="fas fa-birthday-cake w-6 text-blue-600"></i> <span data-i18n="birthday"></span></p>
+                    <p class="flex items-center"><i class="fas fa-mars w-6 text-blue-600"></i> <span data-i18n="gender"></span></p>
+                    <p class="flex items-center"><i class="fas fa-phone w-6 text-blue-600"></i> <span data-i18n="phone"></span></p>
+                    <p class="flex items-center"><i class="fas fa-envelope w-6 text-blue-600"></i> <span data-i18n="email"></span></p>
+                    <p class="flex items-center"><i class="fas fa-map-marker-alt w-6 text-blue-600"></i> <span data-i18n="address"></span></p>
+                    <p class="flex items-center"><i class="fab fa-github w-6 text-blue-600"></i> <span data-i18n="github"></span></p>
                 </div>
-                <div class="mt-4">
-                    <div class="bg-gradient-to-r from-blue-700 to-black  text-white font-bold py-2 px-4 rounded-lg w-full text-center"
-                        data-i18n="project">
-                    </div>
+                
+                <div class="mt-8">
+                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white font-bold py-2 px-4 rounded-lg w-full text-center uppercase text-sm" data-i18n="project"></div>
+                </div>
+                <div class="mt-4 border-l-4 border-blue-500 pl-3">
+                    <p class="text-blue-700 font-bold text-sm">SunShine Dental Care</p>
+                    <p class="text-gray-500 text-xs italic mb-1">ReactJS, Spring Boot, SQL Server</p>
+                    <p class="text-gray-700 text-xs leading-relaxed">Hệ thống ERP Nha khoa có tích hợp thanh toán và nhận diện dữ liệu bằng AI.</p>
                 </div>
             </div>
 
-            <div class="w-2/3 p-4">
-                <div class="bg-gradient-to-r from-blue-700 to-black  text-white p-2 rounded-t-lg">
-                    <h3 class="text-lg font-bold" data-i18n="introduction"></h3>
-                </div>
-                <div class="border-l-4 p-4 bg-white shadow-md">
-                    <p class="text-blue-600 font-bold" data-i18n="intern"></p>
-                    <p data-i18n="looking_for"></p>
-
-                    </p>
-                </div>
-
-                <div class="bg-gradient-to-r from-blue-700 to-black text-white p-2 rounded-t-lg mt-4">
-                    <h3 class="text-lg font-bold" data-i18n="education"></h3>
-                </div>
-                <div class="border-l-4 p-4 bg-white shadow-md">
-                    <p class="text-blue-600 font-bold" data-i18n="certifications"></p>
-                </div>
-
-                <div class="bg-gradient-to-r from-blue-700 to-black text-white p-2 rounded-t-lg mt-4">
-                    <h3 class="text-lg font-bold" data-i18n="skills"></h3>
-                </div>
-                <div class="grid grid-cols-2 gap-4 p-4 bg-white shadow-md border-l-4">
-                    <div>
-                        <h4 class="text-blue-600 font-bold mb-2" data-i18n="soft_skills"></h4>
-
-                        <p class="flex items-center">
-                            <i class="fas fa-comments mr-2"></i> <span data-i18n="communication"></span>
-                        </p>
-                        <div class="bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-blue-700 h-2 rounded-full" style="width: 80%"></div>
-                        </div>
-
-                        <p class="flex items-center">
-                            <i class="fas fa-users mr-2"></i> <span data-i18n="teamwork"></span>
-                        </p>
-                        <div class="bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-blue-700 h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-
-                        <p class="flex items-center">
-                            <i class="fas fa-book mr-2"></i> <span data-i18n="self_learning"></span>
-                        </p>
-                        <div class="bg-gray-200 rounded-full h-2 mb-4">
-                            <div class="bg-blue-700 h-2 rounded-full" style="width: 75%"></div>
-                        </div>
-
-                        <p class="flex items-center">
-                            <i class="fas fa-language mr-2"></i> <span data-i18n="english"></span>
-                        </p>
-                        <div class="bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-700 h-2 rounded-full" style="width: 35%"></div>
-                        </div>
+            <div class="w-full md:w-2/3 flex flex-col gap-5">
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
+                        <h3 class="text-lg font-bold uppercase" data-i18n="introduction"></h3>
                     </div>
-
-                    <div>
-                        <h4 class="text-blue-600 font-bold mb-2" data-i18n="programming_skills"></h4>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-html5 mr-2 text-orange-500"></i> HTML
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-css3-alt mr-2 text-blue-500 "></i> CSS
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-js-square mr-2 text-yellow-500"></i> JavaScript
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-laravel mr-2 text-red-500"></i> Laravel
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-java mr-2 text-orange-600"></i> Java
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
-
-                        <p class="flex items-center">
-                            <i class="fab fa-python mr-2 text-blue-500"></i> Python
-                            <span class="text-blue-700 ml-auto"><i class="fas fa-check"></i></span>
-                        </p>
+                    <div class="p-5 bg-white border-l-4 border-blue-500">
+                        <p class="text-sm text-gray-700 leading-relaxed" data-i18n="looking_for"></p>
                     </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-700 to-black  text-white p-2 rounded-t-lg mt-4">
-                    <h3 class="text-lg font-bold" data-i18n="advantages"></h3>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
+                        <h3 class="text-lg font-bold uppercase" data-i18n="education"></h3>
+                    </div>
+                    <div class="p-5 bg-white border-l-4 border-blue-500">
+                        <p class="text-sm text-gray-800 font-medium leading-relaxed" data-i18n="certifications"></p>
+                    </div>
                 </div>
-                <div class="border-l-4 p-4 bg-white shadow-md">
-                    <ul class="list-disc list-inside">
-                        <li data-i18n="good_looking"></li>
-                        <li data-i18n="enthusiastic">Tháo vát, nhiệt tình</li>
-                        <li data-i18n="adaptable">Dễ thích nghi, tiếp thu nhanh</li>
-                    </ul>
+
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
+                        <h3 class="text-lg font-bold uppercase" data-i18n="skills"></h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 bg-white border-l-4 border-blue-500 text-sm">
+                        <div>
+                            <h4 class="text-blue-700 font-bold mb-4 border-b border-gray-200 pb-1" data-i18n="soft_skills"></h4>
+                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-comments w-6"></i> <span data-i18n="communication"></span></p>
+                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-users w-6"></i> <span data-i18n="teamwork"></span></p>
+                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-robot w-6 text-indigo-600"></i> <span data-i18n="self_learning"></span></p>
+                            <p class="flex items-center font-semibold text-gray-700"><i class="fas fa-language w-6"></i> <span data-i18n="english"></span></p>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-700 font-bold mb-4 border-b border-gray-200 pb-1" data-i18n="programming_skills"></h4>
+                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-react w-6 text-blue-500 text-lg"></i> ReactJS / Vite</p>
+                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-java w-6 text-red-500 text-lg"></i> Spring Boot</p>
+                            <p class="flex items-center font-medium text-gray-800"><i class="fas fa-database w-6 text-gray-600 text-lg"></i> SQL Server</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
     <script>
         const languageToggle = document.getElementById("languageToggle");
         const toggleCircle = document.getElementById("toggleCircle");
         const pdfDownload = document.getElementById("pdfDownload");
         const pdfCircle = pdfDownload.querySelector("div");
-        let currentLang = "en";
-        let isPdfView = false;
+        let currentLang = "vi"; 
 
         function changeLanguage(lang) {
             fetch("locales.json")
-                .then(response => response.json())
+                .then(res => res.json())
                 .then(data => {
                     document.querySelectorAll("[data-i18n]").forEach(el => {
                         const key = el.getAttribute("data-i18n");
                         if (data[lang] && data[lang][key]) {
-                            el.textContent = data[lang][key];
+                            el.innerHTML = data[lang][key];
                         }
                     });
-                })
-                .catch(error => console.error("Error loading translation file:", error));
+                });
         }
+
+        languageToggle.classList.add("bg-blue-500");
+        languageToggle.classList.remove("bg-gray-300");
+        toggleCircle.style.transform = "translateX(28px)";
 
         languageToggle.addEventListener("click", () => {
             currentLang = currentLang === "en" ? "vi" : "en";
-
-            anime({
-                targets: toggleCircle,
-                translateX: currentLang === "vi" ? 28 : 0,
-                easing: "easeInOutQuad",
-                duration: 300
-            });
-
+            anime({ targets: toggleCircle, translateX: currentLang === "vi" ? 28 : 0, easing: "easeInOutQuad", duration: 300 });
             languageToggle.classList.toggle("bg-gray-300", currentLang === "en");
             languageToggle.classList.toggle("bg-blue-500", currentLang === "vi");
-
             changeLanguage(currentLang);
         });
 
         pdfDownload.addEventListener("click", () => {
-            isPdfView = !isPdfView;
+            anime({ targets: pdfCircle, translateX: 28, easing: "easeInOutQuad", duration: 300 });
+            pdfDownload.classList.remove("bg-gray-300");
+            pdfDownload.classList.add("bg-blue-500");
 
-            // Animate the circle
-            anime({
-                targets: pdfCircle,
-                translateX: isPdfView ? 28 : 0,
-                easing: "easeInOutQuad",
-                duration: 300
-            });
+            fetch("locales.json").then(res => res.json()).then(data => {
+                const langData = data[currentLang];
+                const pdf = langData.pdf_data;
 
-            // Toggle background color
-            pdfDownload.classList.toggle("bg-gray-300", !isPdfView);
-            pdfDownload.classList.toggle("bg-blue-500", isPdfView);
+                const docDefinition = {
+                    pageSize: 'A4',
+                    pageMargins: [40, 40, 40, 40],
+                    content: [
+                        {
+                            columns: [
+                                {
+                                    width: '55%',
+                                    stack: [
+                                        { text: langData.name, fontSize: 22, bold: true, margin: [0, 0, 0, 5] },
+                                        { text: langData.intern, fontSize: 11, color: '#555555' }
+                                    ]
+                                },
+                                {
+                                    width: '45%',
+                                    stack: [
+                                        { text: 'SĐT: ' + langData.phone, fontSize: 9, margin: [0, 0, 0, 4] },
+                                        { text: 'Email: ' + langData.email, fontSize: 9, margin: [0, 0, 0, 4] },
+                                        { text: 'Địa chỉ: ' + langData.address, fontSize: 9, margin: [0, 0, 0, 4] }
+                                    ],
+                                    alignment: 'left'
+                                }
+                            ],
+                            margin: [0, 0, 0, 30] 
+                        },
+                        
+                        {
+                            columns: [
+                                // CỘT TRÁI
+                                {
+                                    width: '35%',
+                                    stack: [
+                                        {
+                                            columns: [
+                                                { text: langData.project.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 140, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [0, 0, 0, 15]
+                                        },
+                                        {
+                                            columns: [
+                                                {
+                                                    width: 15,
+                                                    canvas: [
+                                                        { type: 'ellipse', x: 4, y: 5, r1: 3, r2: 3, color: 'black' },
+                                                        { type: 'line', x1: 4, y1: 10, x2: 4, y2: 150, lineWidth: 1, dash: { length: 2 }, color: '#999999' }
+                                                    ]
+                                                },
+                                                {
+                                                    width: '*',
+                                                    stack: [
+                                                        { text: pdf.proj_name, bold: true, fontSize: 10, margin: [0, 0, 0, 5] },
+                                                        { text: pdf.proj_role, italics: true, fontSize: 9, margin: [0, 0, 0, 4] },
+                                                        { text: pdf.proj_tech, fontSize: 9, margin: [0, 0, 0, 5], color: '#444444' },
+                                                        { text: pdf.proj_desc, fontSize: 9, alignment: 'justify', lineHeight: 1.4 }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                
+                                // CỘT PHẢI 
+                                {
+                                    width: '65%',
+                                    padding: [30, 0, 0, 0], 
+                                    stack: [
+                                        {
+                                            columns: [
+                                                { text: langData.introduction.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 280, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [30, 0, 0, 10]
+                                        },
+                                        { text: pdf.objective, fontSize: 9, alignment: 'justify', margin: [30, 0, 0, 20], lineHeight: 1.4 },
 
-            // Download the PDF
-            const link = document.createElement('a');
-            link.href = 'CV_Nguyen_Quoc_Huy.pdf';
-            link.download = 'CV_Nguyen_Quoc_Huy.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+                                        {
+                                            columns: [
+                                                { text: langData.education.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 280, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [30, 0, 0, 10]
+                                        },
+                                        { text: pdf.ed_time, fontSize: 9, color: '#555', margin: [30, 0, 0, 4] },
+                                        { text: pdf.ed_title, bold: true, fontSize: 10, margin: [30, 0, 0, 4] },
+                                        { text: pdf.ed_school, fontSize: 9, margin: [30, 0, 0, 20] },
 
-            // Reset toggle after download
-            setTimeout(() => {
-                isPdfView = false;
-                anime({
-                    targets: pdfCircle,
-                    translateX: 0,
-                    easing: "easeInOutQuad",
-                    duration: 300
+                                        {
+                                            columns: [
+                                                { text: pdf.cert_title.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 280, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [30, 0, 0, 10]
+                                        },
+                                        {
+                                            margin: [40, 0, 0, 20], 
+                                            ul: pdf.cert_list.map(item => ({ text: item, fontSize: 9, margin: [0, 0, 0, 3] }))
+                                        },
+
+                                        {
+                                            columns: [
+                                                { text: langData.skills.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 280, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [30, 0, 0, 10]
+                                        },
+                                        { text: 'Kỹ năng lập trình', bold: true, fontSize: 9, margin: [30, 0, 0, 6] },
+                                        { text: 'ReactJS / Vite, Spring Boot, SQL Server.', fontSize: 9, margin: [30, 0, 0, 15] },
+                                        
+                                        { text: 'Kỹ năng mềm', bold: true, fontSize: 9, margin: [30, 0, 0, 6] },
+                                        {
+                                            margin: [40, 0, 0, 0],
+                                            ul: [
+                                                { text: langData.communication, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.teamwork, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.self_learning, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.english, fontSize: 9, margin: [0, 0, 0, 3] }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    defaultStyle: {
+                        font: 'Roboto' 
+                    }
+                };
+
+                pdfMake.createPdf(docDefinition).download(`CV_NguyenQuocHuy_${currentLang.toUpperCase()}.pdf`);
+
+                const certFiles = [
+                    "Cert_NeuralNetworks_DeepLearning.pdf",
+                    "Cert_ML_NLP_Basics.pdf",
+                    "Cert_UsingDatabases_Python.pdf"
+                ];
+
+                certFiles.forEach((file, index) => {
+                    setTimeout(() => {
+                        const link = document.createElement('a');
+                        link.href = file;
+                        link.download = file;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }, (index + 1) * 800); 
                 });
-                pdfDownload.classList.add("bg-gray-300");
-                pdfDownload.classList.remove("bg-blue-500");
-            }, 1000);
+
+                setTimeout(() => {
+                    anime({ targets: pdfCircle, translateX: 0, easing: "easeInOutQuad", duration: 300 });
+                    pdfDownload.classList.add("bg-gray-300");
+                    pdfDownload.classList.remove("bg-blue-500");
+                }, 3500); 
+            });
         });
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -284,5 +317,4 @@
         });
     </script>
 </body>
-
 </html>
