@@ -61,7 +61,7 @@
                 <div class="mt-4 border-l-4 border-blue-500 pl-3">
                     <p class="text-blue-700 font-bold text-sm">SunShine Dental Care</p>
                     <p class="text-gray-500 text-xs italic mb-1">ReactJS, Spring Boot, SQL Server</p>
-                    <p class="text-gray-700 text-xs leading-relaxed">Hệ thống ERP Nha khoa có tích hợp thanh toán và nhận diện dữ liệu bằng AI.</p>
+                    <p class="text-gray-700 text-xs leading-relaxed">Hệ thống ERP toàn diện tích hợp thanh toán, AI nhận diện dữ liệu và tự động hóa xử lý số liệu.</p>
                 </div>
             </div>
 
@@ -100,7 +100,8 @@
                             <h4 class="text-blue-700 font-bold mb-4 border-b border-gray-200 pb-1" data-i18n="programming_skills"></h4>
                             <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-react w-6 text-blue-500 text-lg"></i> ReactJS / Vite</p>
                             <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-java w-6 text-red-500 text-lg"></i> Spring Boot</p>
-                            <p class="flex items-center font-medium text-gray-800"><i class="fas fa-database w-6 text-gray-600 text-lg"></i> SQL Server</p>
+                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fas fa-database w-6 text-gray-600 text-lg"></i> SQL Server</p>
+                            <p class="flex items-center font-medium text-gray-800"><i class="fas fa-file-excel w-6 text-green-600 text-lg"></i> Excel / Data Processing</p>
                         </div>
                     </div>
                 </div>
@@ -184,10 +185,11 @@
                         
                         {
                             columns: [
-                                // CỘT TRÁI
+                                // CỘT TRÁI (Dự án & Kỹ năng)
                                 {
                                     width: '35%',
                                     stack: [
+                                        // Phần Dự Án
                                         {
                                             columns: [
                                                 { text: langData.project.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
@@ -201,7 +203,7 @@
                                                     width: 15,
                                                     canvas: [
                                                         { type: 'ellipse', x: 4, y: 5, r1: 3, r2: 3, color: 'black' },
-                                                        { type: 'line', x1: 4, y1: 10, x2: 4, y2: 150, lineWidth: 1, dash: { length: 2 }, color: '#999999' }
+                                                        { type: 'line', x1: 4, y1: 10, x2: 4, y2: 175, lineWidth: 1, dash: { length: 2 }, color: '#999999' }
                                                     ]
                                                 },
                                                 {
@@ -214,15 +216,39 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        // Phần Kỹ Năng (Thụt lề nhẹ cho các tiêu đề con)
+                                        {
+                                            columns: [
+                                                { text: langData.skills.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
+                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 140, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
+                                            ],
+                                            margin: [0, 20, 0, 10]
+                                        },
+                                        { text: pdf.tech_skills_title, bold: true, fontSize: 9, margin: [15, 0, 0, 6] },
+                                        {
+                                            margin: [30, 0, 0, 15],
+                                            ul: pdf.tech_skills.map(item => ({ text: item, fontSize: 9, margin: [0, 0, 0, 4], lineHeight: 1.3 }))
+                                        },
+                                        { text: langData.soft_skills, bold: true, fontSize: 9, margin: [15, 0, 0, 6] },
+                                        {
+                                            margin: [30, 0, 0, 0],
+                                            ul: [
+                                                { text: langData.communication, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.teamwork, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.self_learning, fontSize: 9, margin: [0, 0, 0, 3] },
+                                                { text: langData.english, fontSize: 9, margin: [0, 0, 0, 3] }
+                                            ]
                                         }
                                     ]
                                 },
                                 
-                                // CỘT PHẢI 
+                                // CỘT PHẢI (Mục tiêu, Học vấn, Chứng chỉ)
                                 {
                                     width: '65%',
                                     padding: [30, 0, 0, 0], 
                                     stack: [
+                                        // Mục tiêu nghề nghiệp
                                         {
                                             columns: [
                                                 { text: langData.introduction.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
@@ -232,6 +258,7 @@
                                         },
                                         { text: pdf.objective, fontSize: 9, alignment: 'justify', margin: [30, 0, 0, 20], lineHeight: 1.4 },
 
+                                        // Học vấn
                                         {
                                             columns: [
                                                 { text: langData.education.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
@@ -241,8 +268,15 @@
                                         },
                                         { text: pdf.ed_time, fontSize: 9, color: '#555', margin: [30, 0, 0, 4] },
                                         { text: pdf.ed_title, bold: true, fontSize: 10, margin: [30, 0, 0, 4] },
-                                        { text: pdf.ed_school, fontSize: 9, margin: [30, 0, 0, 20] },
+                                        { 
+                                            text: [
+                                                { text: pdf.ed_school_name },
+                                                { text: pdf.ed_school_grade, bold: true }
+                                            ], 
+                                            fontSize: 9, margin: [30, 0, 0, 20] 
+                                        },
 
+                                        // Chứng chỉ
                                         {
                                             columns: [
                                                 { text: pdf.cert_title.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
@@ -251,29 +285,8 @@
                                             margin: [30, 0, 0, 10]
                                         },
                                         {
-                                            margin: [40, 0, 0, 20], 
+                                            margin: [45, 0, 0, 20], 
                                             ul: pdf.cert_list.map(item => ({ text: item, fontSize: 9, margin: [0, 0, 0, 3] }))
-                                        },
-
-                                        {
-                                            columns: [
-                                                { text: langData.skills.toUpperCase(), bold: true, width: 'auto', fontSize: 11, margin: [0, 0, 5, 0], noWrap: true },
-                                                { canvas: [{ type: 'line', x1: 0, y1: 6, x2: 280, y2: 6, lineWidth: 1, color: '#cccccc' }], width: '*' }
-                                            ],
-                                            margin: [30, 0, 0, 10]
-                                        },
-                                        { text: 'Kỹ năng lập trình', bold: true, fontSize: 9, margin: [30, 0, 0, 6] },
-                                        { text: 'ReactJS / Vite, Spring Boot, SQL Server.', fontSize: 9, margin: [30, 0, 0, 15] },
-                                        
-                                        { text: 'Kỹ năng mềm', bold: true, fontSize: 9, margin: [30, 0, 0, 6] },
-                                        {
-                                            margin: [40, 0, 0, 0],
-                                            ul: [
-                                                { text: langData.communication, fontSize: 9, margin: [0, 0, 0, 3] },
-                                                { text: langData.teamwork, fontSize: 9, margin: [0, 0, 0, 3] },
-                                                { text: langData.self_learning, fontSize: 9, margin: [0, 0, 0, 3] },
-                                                { text: langData.english, fontSize: 9, margin: [0, 0, 0, 3] }
-                                            ]
                                         }
                                     ]
                                 }

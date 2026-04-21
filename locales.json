@@ -11,10 +11,10 @@
     "github": "GitHub",
     "project": "PROJECTS",
     "introduction": "CAREER OBJECTIVE",
-    "intern": "Intern Developer",
-    "looking_for": "Aiming to apply practical coding skills in a corporate environment. Actively utilizing AI tools to accelerate development speed, optimize system architecture, and contribute practical value to the company's continuous growth.",
+    "intern": "Full-Stack / Data Processing",
+    "looking_for": "Aiming to apply practical Full-Stack coding skills and strong data processing capabilities in a corporate environment. Highly proficient in utilizing AI tools to accelerate development, optimize system architecture, and automate administrative or HR tasks (e.g., complex Excel data processing, statistical analysis). Seeking to contribute comprehensive technical and operational value to the company's continuous growth.",
     "education": "EDUCATION",
-    "certifications": "<b>Advanced Diploma in Software Engineering (ADSE)</b><br/>FPT-Aptech HCM (Nov 2023 - Dec 2025)<br/>Graduated with Distinction.",
+    "certifications": "<b>Advanced Diploma in Software Engineering (ADSE)</b><br/>FPT-Aptech HCM (Nov 2023 - Dec 2025)<br/>Graduated with: <b>Distinction</b>.",
     "skills": "SKILLS",
     "soft_skills": "Soft Skills",
     "communication": "Communication",
@@ -27,20 +27,26 @@
     "enthusiastic": "Resourceful and highly proactive",
     "adaptable": "Deep focus on code quality and system optimization",
     "pdf_data": {
-      "objective": "Aiming to apply practical coding skills in a corporate environment. Utilizing AI tools to optimize workflow and contribute value to the company's projects.",
+      "objective": "Short-term: Apply Full-Stack programming skills and data analysis capabilities to practical projects. Support the digitization of administrative, HR, and accounting workflows by automating Excel data and optimizing reporting systems.\n\nLong-term: Become a versatile software engineer who ensures source code quality while understanding business operations, capable of advising and building highly practical software solutions.",
       "ed_time": "11/2023 - 12/2025",
-      "ed_title": "Advanced Diploma in Software Engineering (ADSE)",
-      "ed_school": "FPT-Aptech HCM | Distinction",
+      "ed_title": "ADVANCED DIPLOMA IN SOFTWARE ENGINEERING (ADSE)",
+      "ed_school_name": "FPT-Aptech HCM | Graduated with: ",
+      "ed_school_grade": "Distinction",
       "cert_title": "Additional Certifications",
       "cert_list": [
         "Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
         "Machine Learning and NLP Basics (Edureka, 05/2025)",
         "Using Databases with Python (Univ. of Michigan, 02/2025)"
       ],
-      "proj_name": "SunShine Dental Care",
+      "proj_name": "SunShine Dental Care (Web & Mobile)",
       "proj_role": "Role: Full-Stack Developer",
       "proj_tech": "Tech: ReactJS, Spring Boot, SQL Server",
-      "proj_desc": "Built a comprehensive Clinic ERP system. Developed auto-inventory engine, payroll processing with tax logic, integrated VNPay/PayPal, and utilized AI for automated data recognition."
+      "proj_desc": "Developed a comprehensive Clinic Management ERP system. Built core business logic including payroll processing, tax deduction, debt reconciliation, and inventory management. Integrated online payments (VNPay/PayPal). Applied AI for automatic image data extraction to minimize manual entry. Created automation scripts to process data, significantly supporting HR workflows and accounting data control.",
+      "tech_skills_title": "Technical & Data Skills",
+      "tech_skills": [
+        "ReactJS / Vite, Spring Boot, SQL Server.",
+        "Strong proficiency in Excel data processing, macro automation, and statistical reporting."
+      ]
     }
   },
   "vi": {
@@ -55,10 +61,10 @@
     "github": "GitHub",
     "project": "DỰ ÁN",
     "introduction": "MỤC TIÊU NGHỀ NGHIỆP",
-    "intern": "Intern Developer",
-    "looking_for": "Mong muốn áp dụng năng lực thực chiến vào môi trường doanh nghiệp. Kết hợp kỹ năng tự học và khả năng khai thác AI để tối ưu hóa hiệu suất làm việc, từ đó tạo ra các sản phẩm chất lượng và đóng góp giá trị thiết thực cho sự phát triển của công ty.",
+    "intern": "Full-Stack / Data Processing",
+    "looking_for": "Mong muốn áp dụng năng lực lập trình full-stack thực chiến và kỹ năng xử lý dữ liệu mạnh mẽ vào môi trường doanh nghiệp. Kết hợp khả năng tự học, khai thác AI để tối ưu hóa hệ thống, đồng thời ứng dụng tư duy logic vào việc tự động hóa các tác vụ hành chính, nhân sự (xử lý số liệu, bảng tính Excel phức tạp). Hướng tới việc đóng góp giá trị toàn diện cho cả khối kỹ thuật và vận hành.",
     "education": "HỌC VẤN",
-    "certifications": "<b>Lập Trình Viên Quốc Tế (ADSE)</b><br/>FPT-Aptech HCM (11/2023 - 12/2025)<br/>Xếp loại tốt nghiệp: Distinction (Giỏi).",
+    "certifications": "<b>Lập Trình Viên Quốc Tế (ADSE)</b><br/>FPT-Aptech HCM (11/2023 - 12/2025)<br/>Xếp loại tốt nghiệp: <b>Distinction (Giỏi)</b>.",
     "skills": "KỸ NĂNG",
     "soft_skills": "Kỹ năng mềm",
     "communication": "Giao tiếp",
@@ -71,20 +77,26 @@
     "enthusiastic": "Tháo vát, nhiệt tình",
     "adaptable": "Tập trung sâu vào chất lượng code và tối ưu hệ thống",
     "pdf_data": {
-      "objective": "Đang tìm kiếm cơ hội thực tập để phát triển kỹ năng lập trình, học hỏi từ môi trường thực tế và khai thác AI để tối ưu hóa hệ thống.",
+      "objective": "Mục tiêu ngắn hạn: Áp dụng năng lực lập trình Full-Stack và kỹ năng phân tích dữ liệu vào các dự án thực tế. Hỗ trợ số hóa các quy trình hành chính, nhân sự, kế toán bằng cách tự động hóa dữ liệu Excel và tối ưu hệ thống báo cáo.\n\nMục tiêu dài hạn: Trở thành kỹ sư phần mềm đa nhiệm, vừa đảm bảo chất lượng mã nguồn, vừa thấu hiểu quy trình vận hành doanh nghiệp để tư vấn và xây dựng các giải pháp phần mềm mang tính thực tiễn cao.",
       "ed_time": "11/2023 - 12/2025",
       "ed_title": "LẬP TRÌNH VIÊN QUỐC TẾ (ADSE)",
-      "ed_school": "FPT-Aptech HCM | Xếp loại: Distinction",
+      "ed_school_name": "FPT-Aptech HCM | Xếp loại: ",
+      "ed_school_grade": "Distinction (Giỏi)",
       "cert_title": "Chứng chỉ bổ sung",
       "cert_list": [
         "Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
         "Machine Learning and NLP Basics (Edureka, 05/2025)",
-        "Using Databases with Python (ĐH Michigan, 02/2025)"
+        "Using Databases với Python (ĐH Michigan, 02/2025)"
       ],
       "proj_name": "SunShine Dental Care (Web & Mobile)",
       "proj_role": "Vai trò: Full-Stack Developer",
       "proj_tech": "Công nghệ: ReactJS, Spring Boot, SQL Server",
-      "proj_desc": "Hệ thống quản lý phòng khám toàn diện. Xây dựng module tính lương/thuế, kho vận tự động, tích hợp thanh toán VNPay/PayPal và ứng dụng AI để nhận diện/điền dữ liệu ảnh tự động."
+      "proj_desc": "Phát triển toàn diện hệ thống ERP quản lý phòng khám. Xây dựng logic nghiệp vụ lõi: tính lương, khấu trừ thuế, đối chiếu công nợ và quản lý kho. Tích hợp thanh toán trực tuyến (VNPay/ PayPal). Ứng dụng AI nhận diện và trích xuất dữ liệu từ hình ảnh nhằm giảm thiểu nhập liệu thủ công. Kết hợp viết các script tự động hóa xử lý, hỗ trợ đắc lực cho quy trình nhân sự và kiểm soát số liệu kế toán.",
+      "tech_skills_title": "Kỹ năng lập trình & Dữ liệu",
+      "tech_skills": [
+        "ReactJS / Vite, Spring Boot, SQL Server.",
+        "Thành thạo xử lý dữ liệu Excel phức tạp, đối chiếu báo cáo, và tự động hóa quy trình nghiệp vụ."
+      ]
     }
   }
 }
