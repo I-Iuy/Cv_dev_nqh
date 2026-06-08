@@ -13,7 +13,6 @@
     <meta property="og:image" content="https://cv-dev-nqh.vercel.app/cv-preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CV - Nguyễn Quốc Huy">
     <meta name="twitter:description" content="Self-learning, contribution, responsibility.">
@@ -40,139 +39,224 @@
         .animate-bounce-light {
             animation: bounce-light 1.5s infinite;
         }
+
+        .cv-card {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+        }
     </style>
 </head>
 
-<body class="bg-gradient-to-r from-blue-300 via-purple-300 to-indigo-300 min-h-screen flex items-center justify-center py-8">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-8">
 
-    <div id="downloadModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[60]">
-        <div class="bg-white rounded-lg shadow-2xl p-6 max-w-md w-full mx-4 transform transition-all">
-            <h3 class="text-xl font-bold text-blue-700 mb-4 border-b pb-2">
-                <i class="fas fa-shield-alt mr-2 text-green-600"></i><span data-i18n="modal_title">Xác Nhận Tải Xuống</span>
+    <!-- Download Modal -->
+    <div id="downloadModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-[60]">
+        <div class="bg-white cv-card p-6 max-w-md w-full mx-4">
+            <h3 class="text-sm font-bold text-gray-900 mb-4 border-b border-gray-200 pb-3 uppercase tracking-widest">
+                <i class="fas fa-shield-alt mr-2 text-gray-800"></i><span data-i18n="modal_title">Xác Nhận Tải Xuống</span>
             </h3>
             <div class="text-gray-700 text-sm mb-5 leading-relaxed">
-                <p class="mb-2 font-semibold" data-i18n="modal_desc">Web sẽ tải về một tệp nén duy nhất (Ho_So_NguyenQuocHuy.zip) bao gồm:</p>
+                <p class="mb-2 font-semibold text-gray-800" data-i18n="modal_desc">Web sẽ tải về một tệp nén duy nhất (Ho_So_NguyenQuocHuy.zip) bao gồm:</p>
                 <ul class="list-disc pl-5 mb-3 text-gray-600 space-y-1">
                     <li data-i18n="modal_cv"><span class="font-semibold text-gray-800">CV Cá nhân</span> (.pdf)</li>
                     <li data-i18n="modal_cert"><span class="font-semibold text-gray-800">Thư mục "Chứng Chỉ Bổ Sung"</span> (03 tệp .pdf)</li>
                     <li data-i18n="modal_edu"><span class="font-semibold text-gray-800">Thư mục "Hồ Sơ Học Tập"</span> (03 tệp .jpg)</li>
                 </ul>
-                <div class="p-3 bg-blue-50 border-l-4 border-blue-500 rounded text-blue-800 text-sm mb-3">
+                <div class="p-3 bg-gray-50 border-l-4 border-gray-800 text-gray-800 text-sm mb-3">
                     <p data-i18n="modal_warning">"Dữ liệu được trích xuất trực tiếp từ mã nguồn. Tôi khẳng định đây là tệp sạch và an toàn. Xin hãy cấp quyền cho trình duyệt thực hiện tải về."</p>
                 </div>
-                <div class="p-3 bg-gray-50 border-l-4 border-gray-500 rounded text-gray-800 text-sm space-y-1">
+                <div class="p-3 bg-gray-50 border-l-4 border-gray-400 text-gray-700 text-sm">
                     <p data-i18n="modal_advice"><span class="font-bold">Lời khuyên:</span> Bạn nên dùng <strong>Chrome/Edge</strong> trên máy tính để tải tệp.</p>
                 </div>
             </div>
             <div class="flex justify-end space-x-3">
-                <button id="cancelBtn" class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition font-semibold text-sm" data-i18n="btn_cancel">Hủy bỏ</button>
-                <button id="confirmBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition font-semibold text-sm flex items-center">
+                <button id="cancelBtn" class="px-4 py-2 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 transition font-semibold text-sm" data-i18n="btn_cancel">Hủy bỏ</button>
+                <button id="confirmBtn" class="px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 transition font-semibold text-sm flex items-center">
                     <i class="fas fa-download mr-2"></i><span data-i18n="btn_confirm">Đồng ý tải về</span>
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- Floating Controls -->
     <div class="fixed right-4 bottom-4 flex flex-col items-end z-50">
-        <div id="downloadBubble" class="relative bg-blue-600 text-white text-xs rounded-lg py-2 px-3 shadow-lg mb-3 animate-bounce-light max-w-[200px]">
+        <!-- Download Bubble -->
+        <div id="downloadBubble" class="relative bg-gray-900 text-white text-xs py-2 px-3 shadow-lg mb-3 animate-bounce-light max-w-[200px]">
             <p class="font-bold tracking-wide" data-i18n="bubble_title">Bạn có thể xem thêm và tải về CV của tôi tại đây</p>
-            <p class="text-[10px] text-blue-100 mt-1 border-t border-blue-400 pt-1 font-medium" data-i18n="bubble_sub">
-                Bạn nên dùng Chrome/Edge trên máy tính
-            </p>
-            <div class="absolute -bottom-2 right-8 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-blue-600"></div>
+            <p class="text-[10px] text-gray-400 mt-1 border-t border-gray-700 pt-1 font-medium" data-i18n="bubble_sub">Bạn nên dùng Chrome/Edge trên máy tính</p>
+            <div class="absolute -bottom-2 right-8 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-gray-900"></div>
         </div>
 
         <div class="flex flex-col space-y-2 items-end">
-            <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg w-fit">
-                <i class="fas fa-download text-gray-700"></i>
-                <button id="pdfDownload" class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300" title="Tải hồ sơ tổng hợp">
-                    <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center">
-                        <i class="fas fa-file-archive text-gray-700 text-xs"></i>
+            <!-- Download Toggle -->
+            <div class="flex items-center space-x-2 bg-white p-2 shadow-md border border-gray-200 w-fit">
+                <i class="fas fa-download text-gray-800"></i>
+                <button id="pdfDownload" class="relative w-14 h-7 bg-gray-200 rounded-full flex items-center transition duration-300" title="Tải hồ sơ tổng hợp">
+                    <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow border border-gray-200 flex items-center justify-center">
+                        <i class="fas fa-file-archive text-gray-800 text-xs"></i>
                     </div>
                 </button>
             </div>
 
-            <div class="flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg w-fit">
-                <span class="text-gray-700 font-semibold text-sm">EN</span>
-                <button id="languageToggle" class="relative w-14 h-7 bg-gray-300 rounded-full flex items-center transition duration-300">
-                    <div id="toggleCircle" class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md"></div>
+            <!-- Language Toggle -->
+            <div class="flex items-center space-x-2 bg-white p-2 shadow-md border border-gray-200 w-fit">
+                <span class="text-gray-800 font-bold text-sm">EN</span>
+                <button id="languageToggle" class="relative w-14 h-7 bg-gray-200 rounded-full flex items-center transition duration-300">
+                    <div id="toggleCircle" class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow border border-gray-200"></div>
                 </button>
-                <span class="text-gray-700 font-semibold text-sm">VI</span>
+                <span class="text-gray-800 font-bold text-sm">VI</span>
             </div>
         </div>
     </div>
 
+    <!-- Main CV Card -->
     <div class="max-w-5xl mx-auto p-4 w-full">
-        <div class="bg-white shadow-xl rounded-lg p-6 flex flex-col md:flex-row gap-6">
-            <div class="w-full md:w-1/3">
-                <div class="mx-auto mb-4 rounded-full p-[4px] w-[158px] h-[158px] bg-gradient-to-r from-blue-700 to-gray-900 shadow-md">
-                    <img alt="Profile image" class="rounded-full w-full h-full object-cover border-2 border-white" src="1.jpg" />
-                </div>
-                <div class="text-center mt-4">
-                    <h2 class="text-blue-700 text-2xl font-bold uppercase tracking-wide" data-i18n="name"></h2>
-                </div>
-                <div class="mt-4 text-center">
-                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white font-bold py-2 px-4 rounded-lg w-full text-sm shadow-md uppercase" data-i18n="intern"></div>
-                </div>
-                <div class="mt-6 text-gray-700 text-sm space-y-3">
-                    <p class="flex items-center"><i class="fas fa-birthday-cake w-6 text-blue-600"></i> <span data-i18n="birthday"></span></p>
-                    <p class="flex items-center"><i class="fas fa-mars w-6 text-blue-600"></i> <span data-i18n="gender"></span></p>
-                    <p class="flex items-center"><i class="fas fa-phone w-6 text-blue-600"></i> <span data-i18n="phone"></span></p>
-                    <p class="flex items-center"><i class="fas fa-envelope w-6 text-blue-600"></i> <span data-i18n="email"></span></p>
-                    <p class="flex items-center"><i class="fas fa-map-marker-alt w-6 text-blue-600"></i> <span data-i18n="address"></span></p>
-                    <p class="flex items-center"><i class="fab fa-github w-6 text-blue-600"></i> <span data-i18n="github"></span></p>
+        <div class="bg-white cv-card flex flex-col md:flex-row overflow-hidden">
+
+            <!-- Left Sidebar (Dark) -->
+            <div class="w-full md:w-[36%] bg-gray-900 p-8 flex flex-col">
+
+                <!-- Profile Photo -->
+                <div class="mx-auto mb-5 w-[144px] h-[144px] rounded-full flex-shrink-0 overflow-hidden ring-2 ring-gray-600 ring-offset-4 ring-offset-gray-900">
+                    <img alt="Profile image" class="w-full h-full object-cover" src="1.jpg" />
                 </div>
 
-                <div class="mt-8">
-                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white font-bold py-2 px-4 rounded-lg w-full text-center uppercase text-sm" data-i18n="project"></div>
+                <!-- Name -->
+                <div class="text-center mb-2">
+                    <h1 class="text-white text-xl font-bold uppercase tracking-wider leading-tight" data-i18n="name"></h1>
                 </div>
-                <div class="mt-4 border-l-4 border-blue-500 pl-3">
-                    <p class="text-blue-700 font-bold text-sm">SunShine Dental Care</p>
-                    <p class="text-gray-500 text-xs italic mb-1">ReactJS, Spring Boot, SQL Server</p>
-                    <p class="text-gray-700 text-xs leading-relaxed" data-i18n="ui_proj_desc">Hệ thống ERP toàn diện tích hợp thanh toán, AI nhận diện dữ liệu và tự động hóa xử lý số liệu.</p>
+
+                <!-- Title Badge -->
+                <div class="text-center mb-8">
+                    <span class="inline-block border border-gray-600 text-gray-300 py-1.5 px-4 text-[10px] font-semibold uppercase tracking-widest" data-i18n="intern"></span>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-700 mb-6"></div>
+
+                <!-- Contact Information -->
+                <div class="space-y-3 mb-8">
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fas fa-birthday-cake text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="birthday"></span>
+                    </p>
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fas fa-mars text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="gender"></span>
+                    </p>
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fas fa-phone text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="phone"></span>
+                    </p>
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fas fa-envelope text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="email"></span>
+                    </p>
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fas fa-map-marker-alt text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="address"></span>
+                    </p>
+                    <p class="flex items-start gap-3 text-xs text-gray-300">
+                        <i class="fab fa-github text-gray-500 w-4 mt-0.5 flex-shrink-0"></i>
+                        <span data-i18n="github"></span>
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-700 mb-6"></div>
+
+                <!-- Project Section -->
+                <div>
+                    <h3 class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-4" data-i18n="project"></h3>
+                    <div class="border-l-2 border-gray-600 pl-4">
+                        <p class="text-white font-bold text-sm mb-1">SunShine Dental Care</p>
+                        <p class="text-gray-500 text-[10px] italic mb-2">ReactJS · Spring Boot · SQL Server</p>
+                        <p class="text-gray-400 text-[11px] leading-relaxed" data-i18n="ui_proj_desc"></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="w-full md:w-2/3 flex flex-col gap-5">
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
-                        <h3 class="text-lg font-bold uppercase" data-i18n="introduction"></h3>
+            <!-- Right Content Area -->
+            <div class="w-full md:w-[64%] flex flex-col">
+
+                <!-- Introduction Section -->
+                <div>
+                    <div class="bg-gray-900 px-6 py-3">
+                        <h2 class="text-[10px] font-bold uppercase tracking-widest text-white" data-i18n="introduction"></h2>
                     </div>
-                    <div class="p-5 bg-white border-l-4 border-blue-500">
+                    <div class="px-6 py-5">
                         <p class="text-sm text-gray-700 leading-relaxed" data-i18n="looking_for"></p>
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
-                        <h3 class="text-lg font-bold uppercase" data-i18n="education"></h3>
+                <!-- Separator -->
+                <div class="border-t border-gray-100 mx-6"></div>
+
+                <!-- Education Section -->
+                <div>
+                    <div class="bg-gray-900 px-6 py-3">
+                        <h2 class="text-[10px] font-bold uppercase tracking-widest text-white" data-i18n="education"></h2>
                     </div>
-                    <div class="p-5 bg-white border-l-4 border-blue-500">
-                        <p class="text-sm text-gray-800 font-medium leading-relaxed" data-i18n="certifications"></p>
+                    <div class="px-6 py-5">
+                        <p class="text-sm text-gray-700 leading-relaxed" data-i18n="certifications"></p>
                     </div>
                 </div>
 
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                    <div class="bg-gradient-to-r from-blue-700 to-gray-900 text-white p-3">
-                        <h3 class="text-lg font-bold uppercase" data-i18n="skills"></h3>
+                <!-- Separator -->
+                <div class="border-t border-gray-100 mx-6"></div>
+
+                <!-- Skills Section -->
+                <div>
+                    <div class="bg-gray-900 px-6 py-3">
+                        <h2 class="text-[10px] font-bold uppercase tracking-widest text-white" data-i18n="skills"></h2>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-5 bg-white border-l-4 border-blue-500 text-sm">
-                        <div>
-                            <h4 class="text-blue-700 font-bold mb-4 border-b border-gray-200 pb-1" data-i18n="soft_skills"></h4>
-                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-comments w-6"></i> <span data-i18n="communication"></span></p>
-                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-users w-6"></i> <span data-i18n="teamwork"></span></p>
-                            <p class="flex items-center mb-2 font-semibold text-gray-700"><i class="fas fa-robot w-6 text-indigo-600"></i> <span data-i18n="self_learning"></span></p>
-                            <p class="flex items-center font-semibold text-gray-700"><i class="fas fa-language w-6"></i> <span data-i18n="english"></span></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- Soft Skills -->
+                        <div class="px-6 py-5 border-b md:border-b-0 md:border-r border-gray-100">
+                            <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 border-b border-gray-100 pb-2" data-i18n="soft_skills"></h4>
+                            <div class="space-y-2.5 text-sm text-gray-700">
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-comments w-4 text-gray-800 flex-shrink-0"></i>
+                                    <span data-i18n="communication"></span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-users w-4 text-gray-800 flex-shrink-0"></i>
+                                    <span data-i18n="teamwork"></span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-robot w-4 text-gray-800 flex-shrink-0"></i>
+                                    <span data-i18n="self_learning"></span>
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-language w-4 text-gray-800 flex-shrink-0"></i>
+                                    <span data-i18n="english"></span>
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="text-blue-700 font-bold mb-4 border-b border-gray-200 pb-1" data-i18n="programming_skills"></h4>
-                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-react w-6 text-blue-500 text-lg"></i> ReactJS / Vite</p>
-                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fab fa-java w-6 text-red-500 text-lg"></i> Spring Boot</p>
-                            <p class="flex items-center font-medium text-gray-800 mb-3"><i class="fas fa-database w-6 text-gray-600 text-lg"></i> SQL Server</p>
-                            <p class="flex items-center font-medium text-gray-800"><i class="fas fa-file-excel w-6 text-green-600 text-lg"></i> Excel / Data Processing</p>
+                        <!-- Technical Skills -->
+                        <div class="px-6 py-5">
+                            <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 border-b border-gray-100 pb-2" data-i18n="programming_skills"></h4>
+                            <div class="space-y-2.5 text-sm text-gray-800 font-medium">
+                                <p class="flex items-center gap-3">
+                                    <i class="fab fa-react w-4 text-gray-800 flex-shrink-0"></i>
+                                    ReactJS / Vite
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fab fa-java w-4 text-gray-800 flex-shrink-0"></i>
+                                    Spring Boot
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-database w-4 text-gray-800 flex-shrink-0"></i>
+                                    SQL Server
+                                </p>
+                                <p class="flex items-center gap-3">
+                                    <i class="fas fa-file-excel w-4 text-gray-800 flex-shrink-0"></i>
+                                    Excel / Data Processing
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -210,14 +294,14 @@
         }
 
         // Khởi tạo trạng thái Toggle
-        languageToggle.classList.add("bg-blue-500");
+        languageToggle.classList.add("bg-gray-800");
         toggleCircle.style.transform = "translateX(28px)";
 
         languageToggle.addEventListener("click", () => {
             currentLang = currentLang === "en" ? "vi" : "en";
             anime({ targets: toggleCircle, translateX: currentLang === "vi" ? 28 : 0, easing: "easeInOutQuad", duration: 300 });
-            languageToggle.classList.toggle("bg-gray-300", currentLang === "en");
-            languageToggle.classList.toggle("bg-blue-500", currentLang === "vi");
+            languageToggle.classList.toggle("bg-gray-200", currentLang === "en");
+            languageToggle.classList.toggle("bg-gray-800", currentLang === "vi");
             changeLanguage(currentLang);
         });
 
@@ -236,18 +320,17 @@
         confirmBtn.addEventListener("click", async () => {
             const iconElement = confirmBtn.querySelector("i");
             const textElement = confirmBtn.querySelector("span");
-            
+
             confirmBtn.disabled = true;
             anime({ targets: pdfCircle, translateX: 28, easing: "easeInOutQuad", duration: 300 });
-            pdfDownload.classList.remove("bg-gray-300");
-            pdfDownload.classList.add("bg-blue-500");
+            pdfDownload.classList.remove("bg-gray-200");
+            pdfDownload.classList.add("bg-gray-800");
 
             try {
                 const res = await fetch("locales.json");
                 const data = await res.json();
                 const langData = data[currentLang];
-                
-                // Cập nhật trạng thái loading theo ngôn ngữ
+
                 iconElement.className = "fas fa-spinner fa-spin mr-2";
                 textElement.innerText = langData.btn_loading;
 
@@ -256,7 +339,6 @@
                 const eduFolder = zip.folder("Ho_So_Hoc_Tap");
                 const pdfData = langData.pdf_data;
 
-                // Logic tạo PDF
                 const docDefinition = {
                     pageSize: 'A4',
                     pageMargins: [40, 40, 40, 40],
@@ -264,8 +346,8 @@
                     content: [
                         {
                             columns: [
-                                { width: '55%', stack: [{ text: langData.name.toUpperCase(), fontSize: 22, bold: true, color: '#111111', margin: [0, 0, 0, 4] }, { text: langData.intern.toUpperCase(), fontSize: 11, color: '#555555', bold: true, tracking: 1 }] },
-                                { width: '45%', stack: [{ text: 'SĐT: ' + langData.phone, fontSize: 9, margin: [0, 0, 0, 4] }, { text: 'Email: ' + langData.email, fontSize: 9, margin: [0, 0, 0, 4] }, { text: 'Địa chỉ: ' + langData.address, fontSize: 9, margin: [0, 0, 0, 4] }], alignment: 'right' }
+                                { width: '55%', stack: [{ text: langData.name.toUpperCase(), fontSize: 22, bold: true, color: '#111111', margin: [0, 0, 0, 4] }, { text: langData.intern.toUpperCase(), fontSize: 11, color: '#555555', bold: true }] },
+                                { width: '45%', stack: [{ text: 'SĐT: ' + langData.phone, fontSize: 9, margin: [0, 0, 0, 4] }, { text: 'Email: ' + langData.email, fontSize: 9, margin: [0, 0, 0, 4] }, { text: 'Địa chỉ: ' + langData.address, fontSize: 9 }], alignment: 'right' }
                             ],
                             margin: [0, 0, 0, 25]
                         },
@@ -279,9 +361,7 @@
                                         { columns: [{ width: 12, canvas: [{ type: 'ellipse', x: 3, y: 5, r1: 3, r2: 3, color: '#333333' }, { type: 'line', x1: 3, y1: 10, x2: 3, y2: 170, lineWidth: 1, color: '#dddddd' }] }, { width: '*', stack: [{ text: pdfData.proj_name, bold: true, fontSize: 10, margin: [0, 0, 0, 3], color: '#111111' }, { text: pdfData.proj_role, italics: true, fontSize: 9, margin: [0, 0, 0, 4], color: '#555555' }, { text: pdfData.proj_tech, fontSize: 9, margin: [0, 0, 0, 6], color: '#666666' }, { text: pdfData.proj_desc, fontSize: 9, alignment: 'left', lineHeight: 1.4 }] }] },
                                         { table: { widths: ['*'], body: [[{ text: langData.skills.toUpperCase(), bold: true, fontSize: 11, border: [false, false, false, true], borderColor: ['#000', '#000', '#000', '#cccccc'] }]] }, layout: { defaultBorder: false, paddingLeft: () => 0, paddingRight: () => 0, paddingBottom: () => 5 }, margin: [0, 25, 0, 12] },
                                         { text: pdfData.tech_skills_title, bold: true, fontSize: 9, margin: [0, 0, 0, 6], color: '#111111' },
-                                        { margin: [10, 0, 0, 15], ul: pdfData.tech_skills.map(item => ({ text: item, fontSize: 9, margin: [0, 0, 0, 5], lineHeight: 1.3 })) },
-                                        { text: langData.soft_skills, bold: true, fontSize: 9, margin: [0, 0, 0, 6], color: '#111111' },
-                                        { margin: [10, 0, 0, 0], ul: [{ text: langData.communication, fontSize: 9, margin: [0, 0, 0, 4] }, { text: langData.teamwork, fontSize: 9, margin: [0, 0, 0, 4] }, { text: langData.self_learning, fontSize: 9, margin: [0, 0, 0, 4] }, { text: langData.english, fontSize: 9, margin: [0, 0, 0, 4] }] }
+                                        { stack: pdfData.tech_skills.map(item => ({ text: item, fontSize: 9, bold: item.endsWith(':'), color: item.endsWith(':') ? '#111111' : '#444444', margin: [item.startsWith('•') ? 6 : 0, 0, 0, item.endsWith(':') ? 5 : 3], lineHeight: 1.3 })) }
                                     ]
                                 },
                                 {
@@ -292,7 +372,7 @@
                                         { table: { widths: ['*'], body: [[{ text: langData.education.toUpperCase(), bold: true, fontSize: 11, border: [false, false, false, true], borderColor: ['#000', '#000', '#000', '#cccccc'] }]] }, layout: { defaultBorder: false, paddingLeft: () => 0, paddingRight: () => 0, paddingBottom: () => 5 }, margin: [0, 0, 0, 12] },
                                         { text: pdfData.ed_time, fontSize: 9, color: '#666666', margin: [0, 0, 0, 4] },
                                         { text: pdfData.ed_title, bold: true, fontSize: 10, margin: [0, 0, 0, 4], color: '#111111' },
-                                        { text: [{ text: pdfData.ed_school_name + ' | ' }, { text: pdfData.ed_school_grade, bold: true }], fontSize: 9, margin: [0, 0, 0, 25] },
+                                        { text: [{ text: pdfData.ed_school_name }, { text: pdfData.ed_school_grade, bold: true }], fontSize: 9, margin: [0, 0, 0, 20] },
                                         { table: { widths: ['*'], body: [[{ text: pdfData.cert_title.toUpperCase(), bold: true, fontSize: 11, border: [false, false, false, true], borderColor: ['#000', '#000', '#000', '#cccccc'] }]] }, layout: { defaultBorder: false, paddingLeft: () => 0, paddingRight: () => 0, paddingBottom: () => 5 }, margin: [0, 0, 0, 12] },
                                         { margin: [10, 0, 0, 20], ul: pdfData.cert_list.map(item => ({ text: item, fontSize: 9, margin: [0, 0, 0, 5], lineHeight: 1.4 })) }
                                     ]
@@ -306,7 +386,6 @@
                 const cvBlob = await new Promise(resolve => pdfDocGenerator.getBlob(resolve));
                 zip.file(`CV_NguyenQuocHuy_${currentLang.toUpperCase()}.pdf`, cvBlob);
 
-                // Nạp file đính kèm
                 const certFiles = ["Cert_NeuralNetworks_DeepLearning.pdf", "Cert_ML_NLP_Basics.pdf", "Cert_UsingDatabases_Python.pdf"];
                 for (const file of certFiles) {
                     const response = await fetch(`Chung_Chi_Bo_Sung/${file}`).catch(() => null);
@@ -328,8 +407,7 @@
             } finally {
                 downloadModal.classList.add("hidden");
                 downloadModal.classList.remove("flex");
-                
-                // Phục hồi nút bấm
+
                 iconElement.className = "fas fa-download mr-2";
                 fetch("locales.json").then(res => res.json()).then(data => {
                     textElement.innerText = data[currentLang].btn_confirm;
@@ -337,8 +415,8 @@
 
                 confirmBtn.disabled = false;
                 anime({ targets: pdfCircle, translateX: 0, easing: "easeInOutQuad", duration: 300 });
-                pdfDownload.classList.add("bg-gray-300");
-                pdfDownload.classList.remove("bg-blue-500");
+                pdfDownload.classList.add("bg-gray-200");
+                pdfDownload.classList.remove("bg-gray-800");
             }
         });
 
