@@ -41,16 +41,20 @@
     "btn_loading": "Packaging...",
     "pdf_data": {
       "objective": "Short-term: Apply Full-Stack programming skills and data analysis capabilities to practical projects. Support the digitization of administrative, HR, and accounting workflows by automating Excel data and optimizing reporting systems.\n\nLong-term: Become a versatile software engineer who ensures source code quality while understanding business operations, capable of advising and building highly practical software solutions.",
+      "edu_header": "Education",
       "ed_time": "11/2023 - 12/2025",
       "ed_title": "ADVANCED DIPLOMA IN SOFTWARE ENGINEERING (ADSE)",
       "ed_school_name": "FPT-Aptech HCM | Graduated with: ",
       "ed_school_grade": "Distinction",
-      "cert_title": "Work Experience & Certifications",
+      "exp_header": "Work Experience",
+      "exp_list": [
+        "Data Staff at J&T Express: Extracted and cleaned data, integrated data into reports, and established statistical metrics based on business requirements."
+      ],
+      "cert_header": "Additional Certifications",
       "cert_list": [
-        "Data Staff at J&T Express: Extracted and cleaned data, integrated data into reports, and established statistical metrics based on business requirements. (Verifiable via official payslip).",
-        "Certificate: Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
-        "Certificate: Machine Learning and NLP Basics (Edureka, 05/2025)",
-        "Certificate: Using Databases with Python (Univ. of Michigan, 02/2025)"
+        "Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
+        "Machine Learning and NLP Basics (Edureka, 05/2025)",
+        "Using Databases with Python (Univ. of Michigan, 02/2025)"
       ],
       "proj_name": "SunShine Dental Care",
       "proj_role": "Role: Full-Stack Developer",
@@ -110,16 +114,20 @@
     "btn_loading": "Đang đóng gói...",
     "pdf_data": {
       "objective": "Mục tiêu ngắn hạn: Áp dụng năng lực lập trình Full-Stack và kỹ năng phân tích dữ liệu vào các dự án thực tế. Hỗ trợ số hóa các quy trình hành chính, nhân sự, kế toán bằng cách tự động hóa dữ liệu Excel và tối ưu hệ thống báo cáo.\n\nMục tiêu dài hạn: Trở thành kỹ sư phần mềm đa nhiệm, vừa đảm bảo chất lượng mã nguồn, vừa thấu hiểu quy trình vận hành doanh nghiệp để tư vấn và xây dựng các giải pháp phần mềm mang tính thực tiễn cao.",
+      "edu_header": "Học vấn",
       "ed_time": "11/2023 - 12/2025",
       "ed_title": "LẬP TRÌNH VIÊN QUỐC TẾ (ADSE)",
       "ed_school_name": "FPT-Aptech HCM | Xếp loại: ",
       "ed_school_grade": "Distinction (Giỏi)",
-      "cert_title": "Kinh nghiệm làm việc & Chứng chỉ",
+      "exp_header": "Kinh nghiệm",
+      "exp_list": [
+        "Nhân viên dữ liệu tại J&T Express: Phụ trách tải và làm sạch dữ liệu (clean data), tổng hợp vào báo cáo và thiết lập các chỉ số thống kê theo yêu cầu nghiệp vụ."
+      ],
+      "cert_header": "Chứng chỉ bổ sung",
       "cert_list": [
-        "Nhân viên dữ liệu tại J&T Express: Phụ trách tải và làm sạch dữ liệu (clean data), tổng hợp vào báo cáo và thiết lập các chỉ số thống kê theo yêu cầu nghiệp vụ.",
-        "Chứng chỉ Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
-        "Chứng chỉ Machine Learning and NLP Basics (Edureka, 05/2025)",
-        "Chứng chỉ Using Databases với Python (ĐH Michigan, 02/2025)"
+        "Neural Networks and Deep Learning (DeepLearning.AI, 07/2025)",
+        "Machine Learning and NLP Basics (Edureka, 05/2025)",
+        "Using Databases với Python (ĐH Michigan, 02/2025)"
       ],
       "proj_name": "SunShine Dental Care",
       "proj_role": "Vai trò: Lập trình viên Full-Stack",
